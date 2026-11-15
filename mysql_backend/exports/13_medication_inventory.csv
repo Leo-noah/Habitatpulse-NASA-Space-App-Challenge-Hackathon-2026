@@ -1,0 +1,3 @@
+﻿id,medication_name,form_description,quantity_available,expiry_date,active
+1,Demo pain-relief inventory,Prototype inventory example,20,2027-12-31,1
+2,Demo anti-nausea inventory,Prototype inventory example,12,2027-12-31,1

@@ -1,0 +1,91 @@
+/* Chart-axis readability overrides. Loaded after index.css. */
+.line-chart text {
+  fill: #a9cadb;
+  font-family: inherit;
+  font-size: 10px;
+}
+
+.line-chart .axis-title {
+  fill: #d3edf8;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25px;
+}
+
+.line-chart .tick-label {
+  fill: #b9d7e5;
+  font-size: 9px;
+}
+
+.line-chart .grid-line {
+  stroke: #1d536d;
+  stroke-width: 0.8px;
+  stroke-dasharray: 3 4;
+}
+
+.line-chart .axis-line {
+  stroke: #5790a8;
+  stroke-width: 0.85px;
+}
+
+.filter-controls {
+  display: grid;
+  gap: 8px;
+}
+
+.metric-buttons {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.metric-buttons span {
+  color: #8fb1c4;
+  font-size: 10px;
+  font-weight: 800;
+  margin-right: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metric-buttons button {
+  border: 1px solid #2b627d;
+  border-radius: 4px;
+  background: #071f31;
+  color: #bcd8e7;
+  padding: 6px 10px;
+  font-size: 11px;
+}
+
+.metric-buttons button.selected {
+  background: #0b729a;
+  border-color: #28d8ed;
+  color: #ffffff;
+}
+
+.line-chart .model-flag {
+  fill: #ff6370;
+  stroke: #20151b;
+  stroke-width: 0.8px;
+}
+
+.flag-key {
+  color: #ff7a83;
+  font-weight: 700;
+}
+
+/* Use the full card width instead of letterboxing the SVG in the centre. */
+.two-column .line-chart {
+  width: 100%;
+  height: auto !important;
+  min-height: 330px;
+  aspect-ratio: 720 / 230;
+}
+
+.mini-grid .line-chart {
+  width: 100%;
+  height: auto !important;
+  min-height: 210px;
+  aspect-ratio: 720 / 230;
+}

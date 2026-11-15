@@ -1,0 +1,591 @@
+.ground-app {
+  --ground-ink: #18344a;
+  --ground-muted: #667f90;
+  --ground-border: #d7e5ea;
+  --ground-panel: rgba(255, 255, 255, 0.94);
+  --ground-soft: #f7fbfd;
+
+  min-height: 100vh;
+  color: var(--ground-ink);
+  background:
+    radial-gradient(circle at 7% 5%, #d7f6ee 0, transparent 30%),
+    radial-gradient(circle at 92% 8%, #e9e6ff 0, transparent 34%),
+    #f3f8fb;
+  font-family: Inter, "Segoe UI", system-ui, sans-serif;
+}
+
+.ground-app,
+.ground-app * {
+  box-sizing: border-box;
+}
+
+.ground-app button,
+.ground-app textarea,
+.ground-app select {
+  font: inherit;
+}
+
+/* Header aligned with the Space-side design */
+.ground-sidebar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 96px;
+  padding: 20px clamp(70px, 12vw, 350px);
+  border-bottom: 1px solid #d9e5eb;
+  background: rgba(252, 254, 255, 0.95);
+  box-shadow: 0 4px 20px rgba(28, 82, 97, 0.04);
+  backdrop-filter: blur(18px);
+}
+
+.ground-brand {
+  flex: 0 0 auto;
+  color: #18344a;
+  font-size: 40px;
+  font-weight: 850;
+  letter-spacing: -1.8px;
+  white-space: nowrap;
+
+}
+
+.ground-brand span {
+  color: #119d92;
+}
+
+.ground-actions-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.ground-theme-toggle,
+.ground-profile-button,
+.ground-signout {
+  min-height: 48px;
+  padding: 11px 15px;
+  border: 1px solid #d2e2e9;
+  border-radius: 12px;
+  background: #fff;
+  color: #36536a;
+  box-shadow: 0 5px 15px rgba(38, 79, 102, 0.06);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.ground-profile-button {
+  border-color: #83dcd4;
+  background: #effcfa;
+  color: #087b78;
+}
+
+.ground-main {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 48px 0 80px;
+}
+
+.ground-page-heading {
+  margin-bottom: 26px;
+}
+
+.ground-eyebrow {
+  color: #148e86;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+}
+
+.ground-page-heading h1,
+.ground-empty-report h1 {
+  margin: 10px 0;
+  color: #18344a;
+  font-size: clamp(34px, 4vw, 46px);
+  font-weight: 800;
+  letter-spacing: -1.8px;
+  line-height: 1.12;
+}
+
+.ground-page-heading p,
+.ground-empty-report p {
+  margin: 0;
+  color: var(--ground-muted);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.ground-report-select {
+  display: grid;
+  width: min(520px, 100%);
+  gap: 8px;
+  margin-bottom: 20px;
+  color: #36536a;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.ground-report-select select,
+.ground-action-controls select {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #cbdde4;
+  border-radius: 12px;
+  background: #fff;
+  color: #18344a;
+}
+
+.ground-error {
+  margin: 18px 0;
+  padding: 13px;
+  border-left: 4px solid #ef4444;
+  border-radius: 8px;
+  background: #fff4f4;
+  color: #a13d4a;
+}
+
+/* Compact professional status strip */
+.ground-review-strip {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr 1fr;
+  gap: 16px;
+  margin-bottom: 18px;
+  padding: 15px 18px;
+  border: 1px solid #c9e4e0;
+  border-radius: 15px;
+  background: #effbf9;
+}
+
+.ground-review-strip > div {
+  display: grid;
+  align-content: center;
+  gap: 3px;
+}
+
+.ground-review-strip small {
+  color: #5d7d8f;
+  font-size: 12px;
+}
+
+.ground-review-strip strong {
+  color: #174256;
+  font-size: 14px;
+}
+
+.ground-strip-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: #22b8a8;
+}
+
+.ground-priority {
+  width: max-content;
+  padding: 4px 9px;
+  border-radius: 99px;
+}
+
+.ground-priority-low {
+  color: #087b78 !important;
+  background: #dff9f3;
+}
+
+.ground-priority-moderate {
+  color: #a66a00 !important;
+  background: #fff0cf;
+}
+
+.ground-priority-elevated {
+  color: #bd3449 !important;
+  background: #ffe4e9;
+}
+
+/* Three small key-value cards */
+.ground-clinical-snapshot {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.ground-clinical-snapshot article,
+.ground-panel,
+.ground-chart-card {
+  border: 1px solid var(--ground-border);
+  border-radius: 20px;
+  background: var(--ground-panel);
+  box-shadow: 0 12px 30px rgba(34, 72, 93, 0.06);
+}
+
+.ground-clinical-snapshot article {
+  min-height: 116px;
+  padding: 18px;
+}
+
+.ground-clinical-snapshot small {
+  display: block;
+  color: var(--ground-muted);
+  font-size: 12px;
+}
+
+.ground-clinical-snapshot strong {
+  display: block;
+  margin: 9px 0 6px;
+  color: #18344a;
+  font-size: 16px;
+  overflow-wrap: anywhere;
+}
+
+.ground-clinical-snapshot span {
+  color: #668297;
+  font-size: 13px;
+}
+
+.ground-panel {
+  margin-top: 22px;
+  padding: 26px;
+}
+
+.ground-panel h2,
+.ground-chart-card h3 {
+  margin: 9px 0 14px;
+  color: #18344a;
+  font-size: 23px;
+  letter-spacing: -0.35px;
+}
+
+.ground-content-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.ground-content-columns h3 {
+  margin: 0 0 12px;
+  color: #36536a;
+  font-size: 15px;
+}
+
+.ground-content-columns ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #55788d;
+  line-height: 1.7;
+}
+
+.ground-content-columns p {
+  color: #55788d;
+  line-height: 1.6;
+}
+
+.ground-request-note {
+  min-height: 110px;
+  padding: 15px;
+  border-left: 4px solid #2cbfb2;
+  border-radius: 0 12px 12px 0;
+  background: #f0fbf9;
+}
+
+/* Medical officer action area */
+.ground-action-panel {
+  border-top: 4px solid #6188f5;
+}
+
+.ground-action-controls {
+  display: flex;
+  align-items: end;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.ground-action-controls label {
+  display: grid;
+  flex: 1;
+  gap: 8px;
+  color: #36536a;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.ground-mark-reviewed,
+.ground-save-reply {
+  padding: 13px 18px;
+  border: 0;
+  border-radius: 11px;
+  background: linear-gradient(120deg, #2874f0, #7055e9);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.ground-reply-label {
+  display: grid;
+  gap: 8px;
+  margin: 20px 0 12px;
+  color: #36536a;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.ground-reply-label textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #cbdde4;
+  border-radius: 12px;
+  background: #fff;
+  color: #18344a;
+  line-height: 1.55;
+  resize: vertical;
+}
+
+.ground-action-message {
+  margin: 13px 0 0;
+  padding: 11px 13px;
+  border: 1px solid #9cded5;
+  border-radius: 10px;
+  background: #eafaf6;
+  color: #087b78;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.ground-disclaimer {
+  margin: 18px 0 0;
+  color: #597a8f;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Charts */
+.ground-chart-card {
+  margin-top: 22px;
+  padding: 24px;
+}
+
+.ground-chart-heading {
+  padding-bottom: 14px;
+  border-bottom: 1px solid #dceaf0;
+}
+
+.ground-chart-card > .ground-chart-heading > p {
+  margin: 0;
+  color: var(--ground-muted);
+}
+
+.ground-chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  margin: 18px 0 10px;
+}
+
+.ground-chart-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 9px;
+  border: 1px solid #d6e7ed;
+  border-radius: 9px;
+  background: #f8fcfd;
+  color: #35566b;
+  font-size: 12px;
+}
+
+.ground-chart-legend i {
+  width: 22px;
+  height: 3px;
+  border-radius: 99px;
+}
+
+.ground-chart-legend small {
+  color: #718695;
+}
+
+.ground-line-chart {
+  display: block;
+  width: 100%;
+  min-height: 230px;
+}
+
+.ground-grid-line {
+  stroke: #d9e9ef;
+  stroke-dasharray: 4 5;
+}
+
+.ground-axis-line {
+  stroke: #91b7c8;
+}
+
+.ground-axis-text {
+  fill: #567b90;
+  font-size: 11px;
+}
+
+.ground-chart-date {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  color: #66879a;
+  font-size: 12px;
+}
+
+.ground-normalized-note,
+.ground-no-data {
+  color: #597a8f;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.ground-normalized-note {
+  margin: 14px 0 0;
+  padding: 10px 12px;
+  border-left: 3px solid #2cbfb2;
+  border-radius: 0 8px 8px 0;
+  background: #effaf8;
+}
+
+.ground-empty-report {
+  margin-top: 80px;
+  padding: 40px;
+  border: 1px solid var(--ground-border);
+  border-radius: 22px;
+  background: var(--ground-panel);
+}
+
+/* Dark mode */
+[data-theme="dark"] .ground-app {
+  --ground-ink: #edf9ff;
+  --ground-muted: #a9cadb;
+  --ground-border: #31566b;
+  --ground-panel: #102b3d;
+  background: #0a1b29;
+}
+
+[data-theme="dark"] .ground-sidebar {
+  border-color: #31566b;
+  background: rgba(12, 34, 49, 0.96);
+}
+
+[data-theme="dark"] .ground-brand,
+[data-theme="dark"] .ground-page-heading h1,
+[data-theme="dark"] .ground-empty-report h1,
+[data-theme="dark"] .ground-panel h2,
+[data-theme="dark"] .ground-chart-card h3,
+[data-theme="dark"] .ground-clinical-snapshot strong,
+[data-theme="dark"] .ground-review-strip strong {
+  color: #edf9ff;
+}
+
+[data-theme="dark"] .ground-theme-toggle,
+[data-theme="dark"] .ground-signout,
+[data-theme="dark"] .ground-report-select select,
+[data-theme="dark"] .ground-action-controls select,
+[data-theme="dark"] .ground-reply-label textarea {
+  border-color: #31566b;
+  background: #0d2435;
+  color: #d2e5ec;
+}
+
+[data-theme="dark"] .ground-profile-button {
+  border-color: #367983;
+  background: #123c48;
+  color: #67e8df;
+}
+
+[data-theme="dark"] .ground-review-strip {
+  border-color: #28666d;
+  background: #102f3a;
+}
+
+[data-theme="dark"] .ground-content-columns h3,
+[data-theme="dark"] .ground-chart-legend span,
+[data-theme="dark"] .ground-report-select,
+[data-theme="dark"] .ground-action-controls label,
+[data-theme="dark"] .ground-reply-label {
+  color: #d2e5ec;
+}
+
+[data-theme="dark"] .ground-request-note,
+[data-theme="dark"] .ground-normalized-note {
+  background: #102f3a;
+}
+
+[data-theme="dark"] .ground-chart-legend span {
+  border-color: #31566b;
+  background: #0d2435;
+}
+
+[data-theme="dark"] .ground-grid-line {
+  stroke: #294d63;
+}
+
+[data-theme="dark"] .ground-axis-line {
+  stroke: #5d8da4;
+}
+
+[data-theme="dark"] .ground-axis-text {
+  fill: #a9cadb;
+}
+
+/* Responsive */
+@media (max-width: 1050px) {
+  .ground-sidebar {
+    padding: 18px 28px;
+  }
+
+  .ground-review-strip,
+  .ground-clinical-snapshot {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .ground-sidebar {
+    flex-wrap: wrap;
+    padding: 16px 18px;
+  }
+
+  .ground-actions-bar {
+    width: 100%;
+    margin-left: 0;
+    flex-wrap: wrap;
+  }
+
+  .ground-profile-button {
+    display: none;
+  }
+
+  .ground-main {
+    width: min(100% - 28px, 1120px);
+    padding-top: 30px;
+  }
+
+  .ground-review-strip,
+  .ground-clinical-snapshot,
+  .ground-content-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .ground-action-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .ground-chart-card,
+  .ground-panel {
+    padding: 18px;
+  }
+
+  .ground-chart-date {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+}

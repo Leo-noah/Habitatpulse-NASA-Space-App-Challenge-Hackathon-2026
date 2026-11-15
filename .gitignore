@@ -1,0 +1,30 @@
+# Node / Vite dependencies and build output
+**/node_modules/
+**/dist/
+
+# Python temporary files
+__pycache__/
+**/__pycache__/
+*.py[cod]
+
+# Jupyter and VS Code temporary files
+.ipynb_checkpoints/
+.virtual_documents/
+.vscode/
+Untitled.ipynb
+Untitled1.ipynb
+
+# Generated local outputs
+healthcare_rule_outputs/
+training_outputs/
+
+# Secrets and local database configuration
+.env
+.env.*
+*.env
+mysql_backend/db_config.py
+
+# Local logs and database files
+*.log
+*.sqlite
+*.db

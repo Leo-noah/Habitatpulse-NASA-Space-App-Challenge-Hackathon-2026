@@ -1,0 +1,2 @@
+﻿id,crew_code,task_name,medical_reason_summary,status,requested_at_utc,reviewer_note
+1,CREW-01,Equipment inspection,Demo request: mild headache recorded; requires leader or medical-worker decision.,pending_approval,2026-11-14 05:33:00,

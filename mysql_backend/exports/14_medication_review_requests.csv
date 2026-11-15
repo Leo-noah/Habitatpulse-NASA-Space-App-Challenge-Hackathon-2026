@@ -1,0 +1,2 @@
+﻿id,crew_code,medication_name,request_reason,status,requested_at_utc,reviewer_note
+1,CREW-01,Demo pain-relief inventory,Demo request for medical-officer review; no dose or administration instruction is stored.,pending_medical_review,2026-11-14 05:32:00,
